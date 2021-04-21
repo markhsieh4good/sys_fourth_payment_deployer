@@ -8,7 +8,7 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: 123456 
     volumes:
-      - /home/mysql-lib:/var/lib/mysql
+      - /home/mysql-payment:/var/lib/mysql
     ports:
       - 33072:3306 
   payment.adminer:
@@ -26,15 +26,17 @@ services:
   payment.redis:
     image: redis:6.0
     container_name: payment.redis
-#    ports:
-#      - 6379:6379
-#  payment.php:
-#    image: wyveo/nginx-php-fpm:php74 
-#    container_name: payment.system
-#    depends_on:
-#      - payment.db
-#    ports:
-#      - 17185:8000
+  payment.php:
+    build: ./env/nginx-php-fpm 
+    image: wyveo/nginx-php-fpm:php74-modify 
+    container_name: payment.system
+    depends_on:
+      - payment.db
+    volumes:
+      #- ./fourth_payment_system:/usr/share/nginx/html
+      - ./fourth_merge_payment_colorful/full_system:/usr/share/nginx/html
+    ports:
+      - 18440:80
 
 networks: 
   default: 
