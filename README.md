@@ -13,7 +13,7 @@ $ git checkout php74
 
 改變需求
 
-# deploy layer
+# deploy layout
 
 ```
 $ sudo mkdir -p /home/mysql-payment
