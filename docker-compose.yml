@@ -7,8 +7,13 @@ services:
     restart: always 
     environment: 
       MYSQL_ROOT_PASSWORD: 123456 
+      MYSQL_USER: "admin" 
+      MYSQL_PASSWORD: "goodday"
     volumes:
       - /home/mysql-payment:/var/lib/mysql
+      # new MYSQL_DATABASE will trigger below files be imported by default to the database specified
+      #- ./mysql_auto_import_folder:/docker-entrypoint-initdb.d
+      - ./mysql_custom_configuration_80:/etc/mysql/conf.d
     ports:
       - 33072:3306 
   payment.adminer:
@@ -27,14 +32,19 @@ services:
     image: redis:6.0
     container_name: payment.redis
   payment.php:
-    build: ./env/nginx-php-fpm 
-    image: wyveo/nginx-php-fpm:php74-modify 
+    #build: ./env/nginx-php-fpm 
+    #image: wyveo/nginx-php-fpm:php74-modify 
+    image: mstrazds/nginx-php56:latest  
     container_name: payment.system
     depends_on:
       - payment.db
     volumes:
+      # with php74
       #- ./fourth_payment_system:/usr/share/nginx/html
-      - ./fourth_merge_payment_colorful/full_system:/usr/share/nginx/html
+      #- ./fourth_merge_payment_colorful/full_system:/usr/share/nginx/html
+      # with php56
+      - ./fourth_merge_payment_colorful/full_system:/var/www/public
+      #- ./3rd-api_4th-payment_prod/web:/var/www/public
     ports:
       - 18440:80
 
