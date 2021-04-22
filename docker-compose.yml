@@ -45,6 +45,8 @@ services:
       # with php56
       - ./fourth_merge_payment_colorful/full_system:/var/www/public
       #- ./3rd-api_4th-payment_prod/web:/var/www/public
+      # nginx setting
+      #- ./env/php-fpm-56/nginx/sites-enabled/fourth_merge_payment_colorful:/etc/nginx/sites-enabled
     ports:
       - 18440:80
 
