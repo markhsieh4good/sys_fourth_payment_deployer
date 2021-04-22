@@ -13,8 +13,78 @@ server {
 
     charset utf-8;
 
+    location /admin {
+        root /var/www/public/admin/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /agent {
+        root /var/www/public/agent/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /cha {
+        root /var/www/public/cha/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /demo {
+        root /var/www/public/demo/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /doc {
+        root /var/www/public/doc/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /gateway {
+        root /var/www/public/gateway/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /help {
+        root /var/www/public/help/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /login {
+        root /var/www/public/login/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /pay {
+        root /var/www/public/pay/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /reg {
+        root /var/www/public/reg/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /sdkDownload {
+        root /var/www/public/sdkDownload/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /sdkdownload {
+        root /var/www/public/sdkDownload/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /static {
+        root /var/www/public/static/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
     location /user {
         root /var/www/public/user/;
+        try_files $uri $uri/ /index.html /index.php?$query_string;
+    }
+
+    location /wap {
+        root /var/www/public/wap/;
         try_files $uri $uri/ /index.html /index.php?$query_string;
     }
 
