@@ -24,6 +24,17 @@ docker-ce.x86_64            3:18.09.7-3.el7                    docker-ce-stable"
         https://download.docker.com/linux/centos/docker-ce.repo
     sudo yum install -y docker-ce-18.09.1 docker-ce-cli-18.09.1 containerd.io
     sleep 1
+
+    sudo systemctl stop docker
+    if [ ! -e "/etc/docker/" ];
+        sudo mkdir -p /etc/docker
+    fi
+    if [ ! -e "/home/docker/imgs/" ];
+        sudo mkdir -p /home/docker/imgs
+    fi
+    sudo cp ./docker_configs/* /etc/docker/
+    sleep 1
+
     sudo systemctl start docker
     sudo systemctl enable docker
 }
