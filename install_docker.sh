@@ -26,10 +26,10 @@ docker-ce.x86_64            3:18.09.7-3.el7                    docker-ce-stable"
     sleep 1
 
     sudo systemctl stop docker
-    if [ ! -e "/etc/docker/" ];
+    if [ ! -e "/etc/docker/" ]; then
         sudo mkdir -p /etc/docker
     fi
-    if [ ! -e "/home/docker/imgs/" ];
+    if [ ! -e "/home/docker/imgs/" ]; then
         sudo mkdir -p /home/docker/imgs
     fi
     sudo cp ./docker_configs/* /etc/docker/
