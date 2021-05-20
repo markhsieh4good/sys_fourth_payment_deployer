@@ -1,8 +1,8 @@
-## Read Me
+# Read Me
 
 當前的啟動專案，是選擇 [ fourth_merge_payment_colorful  ] 
 
-# ref.
+## ref.
 
 nginx-php-fpm :
 ```
@@ -20,7 +20,7 @@ $ vim nginx-php-fpm/Dockerfile
 
 改變需求
 
-# deploy layout
+## deploy layout
 
 ```
 $ sudo mkdir -p /home/mysql-payment
@@ -33,4 +33,31 @@ $ sudo docker-compose -f docker-compose up -d
 ```
 $ sudo docker system prune
 (choice 'y')
+```
+
+## 正式機組
+> 20210520
+```
+機組網際網路位置	35.221.194.147
+域名              pgateway.tpigame.com
+憑證有效期         90 days [https://manage.sslforfree.com/]
+ssh auth.        centos@addr.ip, key: 4th_payment
+
+主頁              https://pgateway.tpigame.com/
+管理後臺           主頁+ admin/
+代理後台           主頁+ agent/
+資料庫後台         主頁+ db_adminer/
+```
+> db. login
+```
+系統:MySQL
+伺服器:payment.db
+帳密: root 123456
+資料庫: 可以空白
+```
+> 管理後臺預設帳戶
+```
+管理後台：account
+    name: admin
+    password:  www.0766city.com
 ```
