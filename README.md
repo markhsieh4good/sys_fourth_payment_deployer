@@ -25,12 +25,14 @@ $ vim nginx-php-fpm/Dockerfile
 ```
 [linux]
 $ sudo mkdir -p /home/mysql-payment
+$ sed -i 's/.\/fourth_merge_payment_colorful\/full_system/.\/sys_fourth_payment_merge_colorful\/full_system/g' docker-compose.yml
 $ sudo docker network create --driver bridge payment-bridge
 $ sudo docker-compose -f docker-compose.yml build
 $ sudo docker-compose -f docker-compose.yml up -d
 
 [windows : git for windows or other command line]
-> sed  -i 's/\/home\/mysql-payment/.\/mysql-payment/g' docker-compose.yml
+> sed -i 's/\/home\/mysql-payment/.\/mysql-payment/g' docker-compose.yml
+> sed -i 's/.\/fourth_merge_payment_colorful\/full_system/.\/sys_fourth_payment_merge_colorful\/full_system/g' docker-compose.yml
 > mkdir -p ./mysql-payment
 > docker network create --driver bridge payment-bridge
 > docker-compose -f docker-compose.yml build
