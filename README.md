@@ -1,6 +1,6 @@
 # Read Me
 
-當前的啟動專案，是選擇 [ fourth_merge_payment_colorful  ] 
+當前的啟動專案，是選擇 [ sys_fourth_payment_merge_colorful ] 
 
 ## ref.
 
