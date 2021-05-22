@@ -25,14 +25,14 @@ $ vim nginx-php-fpm/Dockerfile
 ```
 [linux]
 $ sudo mkdir -p /home/mysql-payment
-$ sudo docker create network --driver bridge payment-bridge
+$ sudo docker network create --driver bridge payment-bridge
 $ sudo docker-compose -f docker-compose build
 $ sudo docker-compose -f docker-compose up -d
 
 [windows : git for windows or other command line]
 > sed  -i 's/\/home\/mysql-payment/.\/mysql-payment/g' docker-compose.yml
 > mkdir -p ./mysql-payment
-> docker create network --driver bridge payment-bridge
+> docker network create --driver bridge payment-bridge
 > docker-compose -f docker-compose build
 > docker-compose -f docker-compose up -d
 ```
