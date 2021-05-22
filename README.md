@@ -23,10 +23,18 @@ $ vim nginx-php-fpm/Dockerfile
 ## deploy layout
 
 ```
+[linux]
 $ sudo mkdir -p /home/mysql-payment
 $ sudo docker create network --driver bridge payment-bridge
 $ sudo docker-compose -f docker-compose build
 $ sudo docker-compose -f docker-compose up -d
+
+[windows : git for windows or other command line]
+> sed  -i 's/\/home\/mysql-payment/.\/mysql-payment/g' docker-compose.yml
+> mkdir -p ./mysql-payment
+> docker create network --driver bridge payment-bridge
+> docker-compose -f docker-compose build
+> docker-compose -f docker-compose up -d
 ```
 
 如果你需要避免有未知的資料沒有被使用，但又沒用到。
