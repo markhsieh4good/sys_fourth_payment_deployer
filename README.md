@@ -49,11 +49,11 @@ $ sudo docker system prune
 > 20210520
 ```
 機組網際網路位置	35.221.194.147
-域名              pgateway.tpigame.com
+域名              www.fcx1040.com
 憑證有效期         90 days [https://manage.sslforfree.com/]
 ssh auth.        centos@addr.ip, key: 4th_payment
 
-主頁              https://pgateway.tpigame.com/
+主頁              https://www.fcx1040.com/
 管理後臺           主頁+ admin/
 代理後台           主頁+ agent/
 資料庫後台         主頁+ db_adminer/
